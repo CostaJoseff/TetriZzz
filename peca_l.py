@@ -56,11 +56,15 @@ def rotacionar(mapa, linha, coluna, posicao):
             # 11   1
             l1.remover(mapa, linha, coluna)
             resultado = l2.posicionar(mapa, linha, coluna-1)
-            if resultado == -1 and l2.espaco_esquerda(mapa, linha, coluna-1):
-                return l2.posicionar(mapa, linha, coluna-2)
+            if resultado == -1:
+                resultado = l2.posicionar(mapa, linha, coluna-2)
 
-            elif resultado == -1:
+            if resultado == -1:
+                return l2.posicionar(mapa, linha, coluna)
+
+            if resultado == -1:
                 return l1.posicionar(mapa, linha, coluna)
+                
             return resultado
         case 2:
             #         11
