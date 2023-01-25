@@ -1,4 +1,4 @@
-import peca_i, peca_l, peca_o, peca_s, peca_t
+import peca_i, peca_l, peca_o, peca_s, peca_t, peca_s2, peca_j
 
 def desenhar_peca(mapa, linha, coluna, id_peca, posicao):
     if id_peca == 1:
@@ -11,6 +11,10 @@ def desenhar_peca(mapa, linha, coluna, id_peca, posicao):
         return peca_i.posicionar(mapa, linha, coluna, posicao)
     if id_peca == 5:
         return peca_s.posicionar(mapa, linha, coluna, posicao)
+    if id_peca == 6:
+        return peca_s2.posicionar(mapa, linha, coluna, posicao)
+    if id_peca == 7:
+        return peca_j.posicionar(mapa, linha, coluna, posicao)
 
 def remover_peca(mapa, linha, coluna, id_peca, posicao):
     if id_peca == 1:
@@ -23,6 +27,10 @@ def remover_peca(mapa, linha, coluna, id_peca, posicao):
         peca_i.remover(mapa, linha, coluna, posicao)
     elif id_peca == 5:
         peca_s.remover(mapa, linha, coluna, posicao)
+    elif id_peca == 6:
+        peca_s2.remover(mapa, linha, coluna, posicao)
+    elif id_peca == 7:
+        peca_j.remover(mapa, linha, coluna, posicao)
     
 
 def rotacionar_peca(mapa, linha, coluna, id_peca, posicao_atual):
@@ -36,6 +44,10 @@ def rotacionar_peca(mapa, linha, coluna, id_peca, posicao_atual):
         return peca_i.rotacionar(mapa, linha, coluna, posicao_atual)
     if id_peca == 5:
         return peca_s.rotacionar(mapa, linha, coluna, posicao_atual)
+    if id_peca == 6:
+        return peca_s2.rotacionar(mapa, linha, coluna, posicao_atual)
+    if id_peca == 7:
+        return peca_j.rotacionar(mapa, linha, coluna, posicao_atual)
 
 def mover_baixo(mapa, linha_atual, coluna, id_peca, posicao):
     remover_peca(mapa, linha_atual, coluna, id_peca, posicao)
@@ -71,6 +83,10 @@ def espaco_esquerda(mapa, linha, coluna, id_peca, posicao):
             return peca_i.espaco_esquerda(mapa, linha, coluna, posicao)
         case 5:
             return peca_s.espaco_esquerda(mapa, linha, coluna, posicao)
+        case 6:
+            return peca_s2.espaco_esquerda(mapa, linha, coluna, posicao)
+        case 7:
+            return peca_j.espaco_esquerda(mapa, linha, coluna, posicao)
 
 def espaco_direita(mapa, linha, coluna, id_peca, posicao):
     match id_peca:
@@ -84,4 +100,8 @@ def espaco_direita(mapa, linha, coluna, id_peca, posicao):
             return peca_i.espaco_direita(mapa, linha, coluna, posicao)
         case 5:
             return peca_s.espaco_direita(mapa, linha, coluna, posicao)
+        case 6:
+            return peca_s2.espaco_direita(mapa, linha, coluna, posicao)
+        case 7:
+            return peca_j.espaco_direita(mapa, linha, coluna, posicao)
 

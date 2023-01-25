@@ -4,8 +4,8 @@ import pygame, time
 
 altura = 600
 largura = 350
-base_blocos = 10
-altura_blocos = 14
+base_blocos = 12
+altura_blocos = 16
 mapa = []
 linha_vazia = []
 random = SystemRandom()
@@ -45,10 +45,14 @@ def att_frame():
                 pygame.draw.rect(janela, [25,255,255], block, border_radius=5)
             elif mapa[linhas][colunas] == 5:
                 pygame.draw.rect(janela, [255,255,0], block, border_radius=5)
+            elif mapa[linhas][colunas] == 6:
+                pygame.draw.rect(janela, [255,100,0], block, border_radius=5)
+            elif mapa[linhas][colunas] == 7:
+                pygame.draw.rect(janela, [100,50,255], block, border_radius=5)
 
     pygame.draw.line(janela, [255,0,0], (0, altura/altura_blocos), (largura, altura/altura_blocos))
     txt_pontos = fonte_texto.render(str(pontos), 1, (255,255,255))
-    janela.blit(txt_pontos, (largura/3, (altura*10)/100))
+    janela.blit(txt_pontos, (largura/3, (altura*1)/100))
 
     pygame.display.update()
 
@@ -88,7 +92,7 @@ def game_loop():
     isD = False
     isS = False
     posicao = random.randint(1, 4)
-    id_peca = random.randint(1, 5)
+    id_peca = random.randint(1, 7)
     reiniciou = True
     clock = pygame.time.Clock() 
     clock2 = 0
@@ -132,10 +136,10 @@ def game_loop():
                 elif event.key == pygame.K_s:
                     isS = False
 
-        #id_peca = 4
-        #posicao = 2
+        #id_peca = 1
+        #posicao = 1
         if linha == 0 and reiniciou:
-            id_peca = random.randint(1,5)
+            id_peca = random.randint(1,7)
             posicao = random.randint(1,4)
             coluna = int(base_blocos/2) - 1
             reiniciou = False

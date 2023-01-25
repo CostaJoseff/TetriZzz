@@ -64,10 +64,12 @@ def rotacionar(mapa, linha, coluna, posicao):
             #  1
             t2.remover(mapa, linha, coluna)
             resultado = t3.posicionar(mapa, linha-1, coluna)
-            if resultado == -1 and t3.espaco_esquerda(mapa, linha-1, coluna):
-                return t3.posicionar(mapa, linha-1, coluna-1)
-            elif resultado == -1:
+            if resultado == -1:
+                resultado = t3.posicionar(mapa, linha-1, coluna-1)
+            
+            if resultado == -1:
                 return t2.posicionar(mapa, linha, coluna)
+
             return resultado
         case 3:
             #  1     1
@@ -87,8 +89,10 @@ def rotacionar(mapa, linha, coluna, posicao):
             # 1      1
             t4.remover(mapa, linha, coluna)
             resultado = t1.posicionar(mapa, linha, coluna-1)
-            if resultado == -1 and t1.espaco_direita(mapa, linha, coluna-1):
-                return t1.posicionar(mapa, linha, coluna)
-            elif resultado == -1:
+            if resultado == -1:
+                resultado = t1.posicionar(mapa, linha, coluna)
+            
+            if resultado == -1:
                 return t4.posicionar(mapa, linha, coluna)
+                
             return resultado

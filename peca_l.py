@@ -60,7 +60,7 @@ def rotacionar(mapa, linha, coluna, posicao):
                 resultado = l2.posicionar(mapa, linha, coluna-2)
 
             if resultado == -1:
-                return l2.posicionar(mapa, linha, coluna)
+                resultado = l2.posicionar(mapa, linha, coluna)
 
             if resultado == -1:
                 return l1.posicionar(mapa, linha, coluna)
@@ -81,10 +81,12 @@ def rotacionar(mapa, linha, coluna, posicao):
             #  1
             l3.remover(mapa, linha, coluna)
             resultado = l4.posicionar(mapa, linha-1, coluna)
-            if resultado == -1 and l4.espaco_esquerda(mapa, linha-1, coluna):
-                return l4.posicionar(mapa, linha-1, coluna-1)
-            elif resultado == -1:
+            if resultado == -1:
+                resultado = l4.posicionar(mapa, linha-1, coluna-1)
+
+            if resultado == -1:
                 return l3.posicionar(mapa, linha, coluna)
+
             return resultado
         case 4:
             #   1    1
