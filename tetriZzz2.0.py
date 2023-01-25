@@ -169,7 +169,7 @@ def game_loop():
             continue
         else:
             clock2 = (clock2 + 1) % 9
-        clock.tick(10)
+        clock.tick(15)
         
 
 
