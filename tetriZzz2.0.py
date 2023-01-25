@@ -123,6 +123,7 @@ def game_loop():
                 elif event.key == pygame.K_s:
                     isS = True
                 
+                
             elif event.type == pygame.KEYUP:
                 if event.key == pygame.K_a:
                     isA = False
