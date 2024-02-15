@@ -65,3 +65,6 @@ def espaco_baixo(mapa, linha, coluna):
     condicao2 = mapa[linha][coluna+1] == 0
 
     return condicao1 and condicao2
+
+def obter_coordenadas(linha, coluna, posicao):
+        return [[linha, coluna], [linha, coluna+1], [linha-1, coluna], [linha-1, coluna+1]]

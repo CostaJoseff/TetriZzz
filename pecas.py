@@ -105,3 +105,12 @@ def espaco_direita(mapa, linha, coluna, id_peca, posicao):
         case 7:
             return peca_j.espaco_direita(mapa, linha, coluna, posicao)
 
+def obter_coordenadas(linha, coluna, id_peca, posicao):
+    match id_peca:
+        case 1: return peca_t.obter_coordenadas(linha, coluna, posicao)
+        case 2: return peca_o.obter_coordenadas(linha, coluna, posicao)
+        case 3: return peca_l.obter_coordenadas(linha, coluna, posicao)
+        case 4: return peca_i.obter_coordenadas(linha, coluna, posicao)
+        case 5: return peca_s.obter_coordenadas(linha, coluna, posicao)
+        case 6: return peca_s2.obter_coordenadas(linha, coluna, posicao)
+        case 7: return peca_j.obter_coordenadas(linha, coluna, posicao)

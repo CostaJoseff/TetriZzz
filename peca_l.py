@@ -100,3 +100,10 @@ def rotacionar(mapa, linha, coluna, posicao):
             if resultado == -1:
                 return l4.posicionar(mapa, linha, coluna)
             return resultado
+        
+def obter_coordenadas(linha, coluna, posicao):
+    match posicao:
+        case 1: return [[linha, coluna], [linha, coluna+1], [linha-1, coluna], [linha-2, coluna]]
+        case 2: return [[linha, coluna], [linha-1, coluna], [linha-1, coluna+1], [linha-1, coluna+2]]
+        case 3: return [[linha, coluna+1], [linha-1, coluna+1], [linha-2, coluna], [linha-2, coluna+1]]
+        case 4: return [[linha, coluna], [linha, coluna+1], [linha, coluna+2], [linha-1, coluna+2]]

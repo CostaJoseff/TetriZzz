@@ -74,3 +74,10 @@ def rotacionar(mapa, linha, coluna, posicao):
                 return s2.posicionar(mapa, linha, coluna)
                 
             return resultado
+
+def obter_coordenadas(linha, coluna, posicao):
+    if posicao > 2:
+        posicao -= 2
+    match posicao:
+        case 1: return [[linha, coluna], [linha, coluna+1], [linha-1, coluna+1], [linha-1, coluna+2]]
+        case 2: return [[linha, coluna+1], [linha-1, coluna], [linha-1, coluna+1], [linha-2, coluna]]

@@ -104,3 +104,9 @@ def rotacionar(mapa, linha, coluna, posicao):
 
             return resultado
             
+def obter_coordenadas(linha, coluna, posicao):
+    match posicao:
+        case 1: return [[linha, coluna], [linha, coluna+1], [linha-1, coluna+1], [linha-2, coluna+1]]
+        case 2: return [[linha, coluna], [linha, coluna+1], [linha, coluna+2], [linha-1, coluna]]
+        case 3: return [[linha, coluna], [linha-1, coluna], [linha-2, coluna], [linha-2, coluna+1]]
+        case 4: return [[linha, coluna+2], [linha-1, coluna], [linha-1, coluna+1], [linha-1, coluna+2]]
